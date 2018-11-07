@@ -1,0 +1,9 @@
+/savepost?text= &user=
+/findallposts
+/findpostbyid?id=
+/findpostbyuser?user=	-- user=userid
+/saveuser?name= &email=
+/findallusers
+/finduserbyid?id=
+/finduserbyname?name=
+
