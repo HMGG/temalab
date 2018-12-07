@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+        crossorigin=""></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
+
+</head>
+
+<body>
+    <div id="login&register">
+        <h1 id="login">Log in</h1>
+        <div>
+            <label for="loginemail">Email:</label>
+            <input id="loginemail" , type="email">
+        </div>
+        <div>
+            <label for="loginpassword">Password:</label>
+            <input id="loginpassword" , type="password">
+        </div>
+        <div>
+            <button id="loginbutton">Log in</button>
+        </div>
+        <h1>Register</h1>
+        <div>
+            <label for="regemail">Email:</label>
+            <input id="regemail" , type="email">
+        </div>
+        <div>
+            <label for="regpassword">Password:</label>
+            <input id="regpassword" , type="password">
+        </div>
+        <div>
+            <label for="regname">Name:</label>
+            <input id="regname">
+        </div>
+        <div>
+            <input id="business" , name="usertype" , type="radio" , value="Business">
+            Business<br>
+            <input id="natural" , name="usertype" , type="radio" , value="Natural person">
+            Natural person<br>
+        </div>
+        <div id="regbirthdayfield" , hidden>
+            <label for="regbirthday">Birthday:</label>
+            <input id="regbirthday" , type="date">
+        </div>
+        <div id="reglocation" , hidden>
+            <label for="regadress">Location:</label>
+            <input id="regadress">
+        </div>
+        <div>
+            <button id="regbutton">Register</button>
+        </div>
+    </div>
+    <div id="main" , hidden>
+        <nav>
+            <ul>
+                <li id="feed">Feed</li>
+                <li id="events">Events</li>
+                <li id="nearbyusers">Nearby users</li>
+                <li id="messages">Messages</li>
+                <li id="profile">My Profile</li>
+                <li id="logout">Log out</li>
+            </ul>
+        </nav>
+
+        <div id="feedactions" , hidden>
+            <div>New Post
+                <input id="posttext">
+                <button id="submitpost">post</button>
+            </div>
+            <div>Nearby
+                <input id="postdistance" , type="number">
+                <button id="setpostdist">set distance</button>
+            </div>
+            <div>Recent
+                <input id="postrecency" , type="date">
+                <button id="setpostrecency">show recent</button>
+            </div>
+            <p id="focuseduser"></p>
+            <p id="focusedtext"></p>
+            <label for="newcomment">Enter comment</label>
+            <input id="newcomment">
+            <ul id="focusedcomments"></ul>
+        </div>
+
+        <div id="eventactions" , hidden>
+            <div id="newevent">Create Event
+                <input id="eventtitle">
+                <button id="submitevent">create</button>
+            </div>
+
+            <div>Nearby
+                <input id="eventdistance" , type="number">
+                <button id="seteventdist">set distance</button>
+            </div>
+
+            <div id="upcomingevents">Upcoming</div>
+
+            <div id="focusedevent">
+                <p id="focusedhost"></p>
+                <p id="focusedtitle"></p>
+                <div id="attend">Going</div>
+                <div id="unattend" , hidden>Not going</div>
+                <ul id="focusedattendees"></ul>
+            </div>
+        </div>
+
+        <div id="nearbyactions" , hidden>
+            <div id="getnearbyusers">Set distance
+                <input id="searchdistance" , type="number">
+                <button id="setdistance">set</button>
+            </div>
+            <input id="onlyfollowing" , type="checkbox">Only users I follow</button>
+        </div>
+
+        <div id="profileactions" , hidden>
+            <label for="myname">Name</label>
+            <input id="myname" , readonly>
+            <label for="mybio">Bio</label>
+            <input id="mybio" , readonly>
+            <label for="mybirthday">Birthday</label>
+            <input type="date" , id="mybirthday" , readonly>
+            <label for="mypassword" , id="passwordlabel">Password</label>
+            <input type="password" id="mypassword">
+            <button id="editprofile">Edit</button>
+            <button id="saveprofile">Save</button>
+            <ul id="followers">Followers</ul>
+            <ul id="following">Following</ul>
+            <ul id="myevents">My Events</ul>
+        </div>
+
+        <div id="mapid" , style="width: 400px; height: 300px">
+        </div>
+    </div>
+    <script src="main.js"></script>
+    <script src="login.js"></script>
+    <script src="feed.js"></script>
+    <script src="profile.js"></script>
+    <script src="event.js"></script>
+</body>
+
+</html>
